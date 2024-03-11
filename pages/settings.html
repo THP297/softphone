@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Softphone</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/responsive.css" />
+  </head>
+  <body>
+    <nav>
+      <div id="nav-left">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 27 24"
+            role="img"
+            width="24px"
+            height="24px"
+            aria-hidden="true"
+          >
+            <path
+              d="M7.72.59a6.82 6.82 0 0 1 7.7 1.53 8.23 8.23 0 0 1 1.9 3.09l.09-.13c1.6-1.95 4.96-1.24 5.21 2.5v.05C24.2 7.9 27 9.02 27 12.53a4.57 4.57 0 0 1-3.3 4.6c-.54.19-1.12.28-1.7.28h-4.54L10.36 24v-6.59H4.95A5 5 0 0 1 0 12.48c0-3 1.97-4.32 3.71-4.76l-.03-.28a7.18 7.18 0 0 1-.02-.57c0-2.45 1.67-5.27 4.06-6.28zM12.08 6a1.9 1.9 0 0 0-2.25 1.25l-.04.15-.03.2c-.04.25-.02.5.05.75L7.53 9.88a1.9 1.9 0 0 0-2.94.93l-.04.13-.03.15a1.9 1.9 0 1 0 3.63-.42l2.18-1.46a1.9 1.9 0 0 0 1.44.52l1.1 2.58c-.1.15-.18.31-.24.5l-.04.13-.03.15a1.9 1.9 0 1 0 3.62-.43l1.4-.91a1.9 1.9 0 0 0 3.36-.7 1.9 1.9 0 0 0-3.65-1.02l-.05.14-.03.16c-.02.16-.03.32-.01.47l-1.64 1.07a1.9 1.9 0 0 0-1.88-.22l-.96-2.25a1.88 1.88 0 0 0-.64-3.4zm1.48 7.17a.9.9 0 0 1 1.74.41.9.9 0 0 1-1.74-.41zm-8.04-2a.9.9 0 0 1 1.75.41.9.9 0 0 1-1.75-.41zm12.7-.77a.9.9 0 0 1 1.74.41.9.9 0 0 1-1.75-.41zm-7.45-2.77a.9.9 0 0 1 1.74.41.9.9 0 0 1-1.74-.4z"
+            ></path>
+          </svg>
+          <p id="status">Available</p>
+        </div>
+        <div id="drop-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 10.2 6.2"
+            role="img"
+            width="15px"
+            height="15px"
+            aria-hidden="true"
+          >
+            <path
+              d="M4.7 6.1.18 1.6a.5.5 0 0 1 0-.8l.5-.5a.52.52 0 0 1 .4-.2c.2 0 .3 0 .4.2l3.6 3.6L8.68.2a.5.5 0 0 1 .8 0l.5.5a.5.5 0 0 1 0 .8L5.48 6a.52.52 0 0 1-.4.2c-.18 0-.28 0-.38-.1z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <div id="dropdown-status">
+        <ul>
+          <li>
+            <div>Offline</div>
+          </li>
+          <li>
+            <div>Available</div>
+          </li>
+        </ul>
+      </div>
+
+      <ul id="nav-right">
+        <a href="softphone.html" id="softphone-page">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 17 17"
+              role="img"
+              width="18px"
+              height="18px"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="m9.633 13.6 2.078-2.078c.283-.283.661-.378.945-.189 1.038.378 2.172.567 3.4.567.566 0 .944.378.944.944v3.212c0 .566-.378.944-.944.944C7.178 17 0 9.822 0 .944 0 .378.378 0 .944 0H4.25c.567 0 .944.378.944.944 0 1.134.19 2.267.567 3.4.095.284 0 .662-.189.945L3.4 7.367c1.322 2.644 3.589 4.816 6.233 6.233z"
+              ></path>
+            </svg>
+          </div>
+        </a>
+
+        <a href="register.html" id="register-page">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"
+              width="18px"
+              height="18px"
+            >
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                class="fa-secondary"
+                opacity=".4"
+                d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+              <path
+                class="fa-primary"
+                d="M504 248v64c0 13.3 10.7 24 24 24s24-10.7 24-24V248h64c13.3 0 24-10.7 24-24s-10.7-24-24-24H552V136c0-13.3-10.7-24-24-24s-24 10.7-24 24v64H440c-13.3 0-24 10.7-24 24s10.7 24 24 24h64z"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href="chat.html" id="chat-page">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 21 21"
+              role="img"
+              width="18px"
+              height="18px"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18.9 0H2.1A2.1 2.1 0 0 0 0 2.1V21l4.2-4.2h14.7a2.11 2.11 0 0 0 2.1-2.1V2.1A2.11 2.11 0 0 0 18.9 0z"
+              ></path>
+            </svg>
+          </div>
+        </a>
+        <a href="task.html" id="task-page">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 22 22"
+              role="img"
+              width="18px"
+              height="18px"
+              aria-hidden="true"
+            >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path
+                d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm1 14H8c-.55 0-1-.45-1-1s.45-1 1-1h5c.55 0 1 .45 1 1s-.45 1-1 1zm3-4H8c-.55 0-1-.45-1-1s.45-1 1-1h8c.55 0 1 .45 1 1s-.45 1-1 1zm0-4H8c-.55 0-1-.45-1-1s.45-1 1-1h8c.55 0 1 .45 1 1s-.45 1-1 1z"
+              ></path>
+            </svg>
+          </div>
+        </a>
+        <a href="settings.html" id="settings-page">
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 17 18"
+              role="img"
+              width="18px"
+              height="18px"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M15.06 8.79c0-.3-.03-.58-.07-.86l1.85-1.45a.45.45 0 0 0 .1-.56L15.2 2.87a.44.44 0 0 0-.54-.19l-2.17.88A6.38 6.38 0 0 0 11 2.7L10.68.37a.43.43 0 0 0-.43-.37h-3.5a.43.43 0 0 0-.42.37L5.99 2.7a6.7 6.7 0 0 0-1.47.86l-2.18-.88a.42.42 0 0 0-.53.2L.06 5.91a.43.43 0 0 0 .1.56l1.85 1.45a7.01 7.01 0 0 0-.06.86 7 7 0 0 0 .06.86L.17 11.1a.45.45 0 0 0-.1.56l1.74 3.05c.1.19.34.26.53.19l2.18-.88c.45.35.94.64 1.47.86l.34 2.33c.02.21.2.37.42.37h3.5a.43.43 0 0 0 .43-.37l.33-2.33a6.7 6.7 0 0 0 1.48-.86l2.17.88c.2.08.43 0 .54-.2l1.74-3.04a.45.45 0 0 0-.1-.56L15 9.65a6.89 6.89 0 0 0 .06-.86zm-6.63 3.66a3.07 3.07 0 0 1 0-6.15 3.07 3.07 0 0 1 0 6.15z"
+              ></path>
+            </svg>
+          </div>
+        </a>
+      </ul>
+    </nav>
+    <section id="settings">
+      <div id="title"><h1>Settings</h1></div>
+      <div id="settings-main">
+        <div>
+          <legend>Phone type</legend>
+          <label for="phoneTypeSoftphone" class="wrapper-option"
+            ><input
+              type="radio"
+              id="phoneTypeSoftphone"
+              name="phoneType"
+              data-testid="ccp-settings-softphone-radio"
+              value="softphone"
+              checked=""
+            />
+            <div class="RadioStyle-sc-arnm48-0 hJCnRk"></div>
+            Softphone</label
+          >
+          <label for="phoneTypeDeskphone" class="wrapper-option"
+            ><input
+              type="radio"
+              id="phoneTypeDeskphone"
+              name="phoneType"
+              data-testid="ccp-settings-softphone-radio"
+              value="deskphone"
+            />
+            <div class="RadioStyle-sc-arnm48-0 hJCnRk"></div>
+            Desk phone</label
+          >
+          <div id="phone-form">
+            <div>
+              <div id="country-code">
+                <p>Country</p>
+                <button id="dropdown-btn">
+                  <div>
+                    <img src="/images/american.png" alt="" />
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 10.2 6.2"
+                        role="img"
+                        width="10px"
+                        height="15px"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4.7 6.1.18 1.6a.5.5 0 0 1 0-.8l.5-.5a.52.52 0 0 1 .4-.2c.2 0 .3 0 .4.2l3.6 3.6L8.68.2a.5.5 0 0 1 .8 0l.5.5a.5.5 0 0 1 0 .8L5.48 6a.52.52 0 0 1-.4.2c-.18 0-.28 0-.38-.1z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+                <div id="dropdown-options">
+                  <ul>
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 513 342"
+                        class="flag-icon flag-icon-au CountryFlagInList-sc-bi1svf-4 iAflTq"
+                        width="20px"
+                        height="13px"
+                      >
+                        <path fill="#10338c" d="M0 0h513v342H0z"></path>
+                        <g fill="#FFF">
+                          <path
+                            d="M222.2 170.7c.3-.3.5-.6.8-.9-.2.3-.5.6-.8.9zM188 212.6l11 22.9 24.7-5.7-11 22.8 19.9 15.8-24.8 5.6.1 25.4-19.9-15.9-19.8 15.9.1-25.4-24.8-5.6 19.9-15.8-11.1-22.8 24.8 5.7zm197.9 28.5 5.2 10.9 11.8-2.7-5.3 10.9 9.5 7.5-11.8 2.6v12.2l-9.4-7.6-9.5 7.6.1-12.2-11.8-2.6 9.5-7.5-5.3-10.9 11.8 2.7zm-48.6-116 5.2 10.9 11.8-2.7-5.3 10.9 9.5 7.5-11.8 2.7v12.1l-9.4-7.6-9.5 7.6.1-12.1-11.9-2.7 9.5-7.5-5.3-10.9L332 136zm48.6-66.2 5.2 10.9 11.8-2.7-5.3 10.9 9.5 7.5-11.8 2.7v12.1l-9.4-7.6-9.5 7.6.1-12.1-11.8-2.7 9.5-7.5-5.3-10.9 11.8 2.7zm42.5 49.7 5.2 10.9 11.8-2.7-5.3 10.9 9.5 7.5-11.8 2.6V150l-9.4-7.6-9.5 7.6v-12.2l-11.8-2.6 9.5-7.5-5.3-10.9 11.8 2.7zM398 166.5l4.1 12.7h13.3l-10.8 7.8 4.2 12.7-10.8-7.9-10.8 7.9 4.1-12.7-10.7-7.8h13.3z"
+                          ></path>
+                          <path
+                            d="M254.8 0v30.6l-45.1 25.1h45.1V115h-59.1l59.1 32.8v22.9h-26.7l-73.5-40.9v40.9H99v-48.6l-87.4 48.6H-1.2v-30.6L44 115H-1.2V55.7h59.1L-1.2 22.8V0h26.7L99 40.8V0h55.6v48.6L242.1 0z"
+                          ></path>
+                        </g>
+                        <path
+                          fill="#D80027"
+                          d="M142.8 0h-32v69.3h-112v32h112v69.4h32v-69.4h112v-32h-112z"
+                        ></path>
+                        <path
+                          fill="#0052B4"
+                          d="m154.6 115 100.2 55.7v-15.8L183 115z"
+                        ></path>
+                        <path
+                          fill="#FFF"
+                          d="m154.6 115 100.2 55.7v-15.8L183 115z"
+                        ></path>
+                        <path
+                          d="m154.6 115 100.2 55.7v-15.8L183 115zm-83.9 0-71.9 39.9v15.8L99 115z"
+                          fill="#D80027"
+                        ></path>
+                        <path
+                          fill="#0052B4"
+                          d="M99 55.7-1.2 0v15.7l71.9 40z"
+                        ></path>
+                        <path
+                          fill="#FFF"
+                          d="M99 55.7-1.2 0v15.7l71.9 40z"
+                        ></path>
+                        <path
+                          d="M99 55.7-1.2 0v15.7l71.9 40zm84 0 71.8-40V0L154.6 55.7z"
+                          fill="#D80027"
+                        ></path>
+                      </svg>
+                      <div class="country">Australia</div>
+                      <div class="country-code">+61</div>
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0.5 21 14"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="flag-icon flag-icon-hk CountryFlagInList-sc-bi1svf-4 iAflTq"
+                        width="20px"
+                        height="13px"
+                      >
+                        <g fill="none" fill-rule="evenodd">
+                          <path fill="#FFF" d="M0 0h21v15H0z"></path>
+                          <path fill="#ee1c25" d="M0 0h21v15H0z"></path>
+                          <path
+                            d="M12 7.19c-.798-.5-1 .409-1 0 0-.828.895-1.5 2-1.5s2 .672 2 1.5c-.949 0-1.044.5-1.5.5-.56 0-.702 0-1.5-.5zM13.25 7a.25.25 0 1 0 0-.5.25.25 0 0 0 0 .5zm-1.81 1.962c.228-.913-.698-.824-.31-.95.788-.257 1.703.387 2.045 1.438.341 1.05-.021 2.11-.809 2.366-.293-.903-.798-.838-.939-1.272-.173-.533-.217-.668.012-1.582zm.566 1.13a.25.25 0 1 0 .476-.154.25.25 0 0 0-.476.154zM9.58 8.977c.94-.065.57-.919.81-.588.486.67.157 1.74-.737 2.389-.894.65-2.013.632-2.5-.038.768-.558.55-1.018.92-1.286.453-.33.568-.413 1.507-.477zm-.899.888a.25.25 0 1 0 .294.405.25.25 0 0 0-.294-.405zm.312-2.652c.351.874 1.049.258.809.588-.487.67-1.606.687-2.5.038-.894-.65-1.223-1.719-.736-2.39.767.559 1.138.21 1.507.478.453.33.568.413.92 1.286zm-1.124-.58a.25.25 0 1 0-.293.404.25.25 0 0 0 .293-.404zm2.619-.524c-.722.605.08 1.078-.309.951-.788-.256-1.15-1.315-.809-2.365.342-1.05 1.257-1.695 2.045-1.439-.293.903.153 1.147.012 1.581-.173.533-.217.668-.939 1.272zm.205-1.247a.25.25 0 1 0-.475-.155.25.25 0 0 0 .475.155z"
+                            fill="#FFF"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div class="country">Hong Kong</div>
+                      <div class="country-code">+852</div>
+                    </li>
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 85.333 512 341.333"
+                        class="flag-icon flag-icon-sg CountryFlagInList-sc-bi1svf-4 iAflTq"
+                        width="20px"
+                        height="13px"
+                      >
+                        <path fill="#FFF" d="M0 85.337h512v341.326H0z"></path>
+                        <path fill="#D80027" d="M0 85.337h512V256H0z"></path>
+                        <g fill="#FFF">
+                          <path
+                            d="M83.478 170.666c0-24.865 17.476-45.637 40.812-50.734a52.059 52.059 0 0 0-11.13-1.208c-28.688 0-51.942 23.254-51.942 51.941s23.255 51.942 51.942 51.942c3.822 0 7.543-.425 11.13-1.208-23.336-5.095-40.812-25.867-40.812-50.733zm66.783-48.231 3.684 11.337h11.921l-9.645 7.007 3.684 11.337-9.644-7.006-9.645 7.006 3.685-11.337-9.645-7.007h11.921z"
+                          ></path>
+                          <path
+                            d="m121.344 144.696 3.683 11.337h11.921l-9.645 7.007 3.684 11.337-9.643-7.006-9.645 7.006 3.685-11.337-9.645-7.007h11.921zm57.834 0 3.684 11.337h11.921l-9.645 7.007 3.684 11.337-9.644-7.006-9.644 7.006 3.685-11.337-9.645-7.007h11.921zm-11.131 33.391 3.684 11.337h11.921l-9.644 7.007 3.684 11.337-9.645-7.006-9.643 7.006 3.684-11.337-9.644-7.007h11.92zm-35.573 0 3.683 11.337h11.921l-9.644 7.007 3.684 11.337-9.644-7.006-9.644 7.006 3.684-11.337-9.644-7.007h11.92z"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div class="country">Singapore</div>
+                      <div class="country-code">+65</div>
+                    </li>
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 513 342"
+                        class="flag-icon flag-icon-gb CountryFlagInList-sc-bi1svf-4 iAflTq"
+                        width="20px"
+                        height="13px"
+                      >
+                        <g fill="#FFF">
+                          <path d="M0 0h513v341.3H0V0z"></path>
+                          <path
+                            d="M311.7 230 513 341.3v-31.5L369.3 230h-57.6zM200.3 111.3 0 0v31.5l143.7 79.8h56.6z"
+                          ></path>
+                        </g>
+                        <path
+                          d="M393.8 230 513 295.7V230H393.8zm-82.1 0L513 341.3v-31.5L369.3 230h-57.6zm146.9 111.3-147-81.7v81.7h147zM90.3 230 0 280.2V230h90.3zm110 14.2v97.2H25.5l174.8-97.2zm-82.1-132.9L0 45.6v65.7h118.2zm82.1 0L0 0v31.5l143.7 79.8h56.6zM53.4 0l147 81.7V0h-147zm368.3 111.3L513 61.1v50.2h-91.3zm-110-14.2V0h174.9L311.7 97.1z"
+                          fill="#0052B4"
+                        ></path>
+                        <g fill="#D80027">
+                          <path
+                            d="M288 0h-64v138.7H0v64h224v138.7h64V202.7h224v-64H288V0z"
+                          ></path>
+                          <path
+                            d="M311.7 230 513 341.3v-31.5L369.3 230h-57.6zm-168 0L0 309.9v31.5L200.3 230h-56.6zm56.6-118.7L0 0v31.5l143.7 79.8h56.6zm168 0L513 31.5V0L311.7 111.3h56.6z"
+                          ></path>
+                        </g>
+                      </svg>
+                      <div class="country">United Kingdom</div>
+                      <div class="country-code">+44</div>
+                    </li>
+                    <li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 513 342"
+                        class="flag-icon flag-icon-us CountryFlagInList-sc-bi1svf-4 iAflTq"
+                        width="20px"
+                        height="13px"
+                      >
+                        <path fill="#FFF" d="M0 0h513v342H0z"></path>
+                        <path
+                          d="M0 0h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513v26.3H0zm0 52.7h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513V342H0z"
+                          fill="#D80027"
+                        ></path>
+                        <path fill="#2E52B2" d="M0 0h256.5v184.1H0z"></path>
+                        <path
+                          d="m47.8 138.9-4-12.8-4.4 12.8H26.2l10.7 7.7-4 12.8 10.9-7.9 10.6 7.9-4.1-12.8 10.9-7.7zm56.3 0-4.1-12.8-4.2 12.8H82.6l10.7 7.7-4 12.8 10.7-7.9 10.8 7.9-4-12.8 10.7-7.7zm56.5 0-4.3-12.8-4 12.8h-13.5l11 7.7-4.2 12.8 10.7-7.9 11 7.9-4.2-12.8 10.7-7.7zm56.2 0-4-12.8-4.2 12.8h-13.3l10.8 7.7-4 12.8 10.7-7.9 10.8 7.9-4.3-12.8 11-7.7zM100 75.3l-4.2 12.8H82.6L93.3 96l-4 12.6 10.7-7.8 10.8 7.8-4-12.6 10.7-7.9h-13.4zm-56.2 0-4.4 12.8H26.2L36.9 96l-4 12.6 10.9-7.8 10.6 7.8L50.3 96l10.9-7.9H47.8zm112.5 0-4 12.8h-13.5l11 7.9-4.2 12.6 10.7-7.8 11 7.8-4.2-12.6 10.7-7.9h-13.2zm56.5 0-4.2 12.8h-13.3l10.8 7.9-4 12.6 10.7-7.8 10.8 7.8-4.3-12.6 11-7.9h-13.5zm-169-50.6-4.4 12.6H26.2l10.7 7.9-4 12.7L43.8 50l10.6 7.9-4.1-12.7 10.9-7.9H47.8zm56.2 0-4.2 12.6H82.6l10.7 7.9-4 12.7L100 50l10.8 7.9-4-12.7 10.7-7.9h-13.4zm56.3 0-4 12.6h-13.5l11 7.9-4.2 12.7 10.7-7.9 11 7.9-4.2-12.7 10.7-7.9h-13.2zm56.5 0-4.2 12.6h-13.3l10.8 7.9-4 12.7 10.7-7.9 10.8 7.9-4.3-12.7 11-7.9h-13.5z"
+                          fill="#FFF"
+                        ></path>
+                      </svg>
+                      <div class="country">United States of America</div>
+                      <div class="country-code">+1</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div id="phone-input">
+                <p>Phone number or quick connect</p>
+                <div>
+                  <input type="text" placeholder="Enter a phone number" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <legend>Language</legend>
+          <div id="language-form">
+            <button id="language-dropdown-btn">
+              <div>
+                <div id="language">English</div>
+                <div id="language-dropdown-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 10.2 6.2"
+                    role="img"
+                    aria-hidden="true"
+                    width="15px"
+                    height="15px"
+                  >
+                    <path
+                      d="M4.7 6.1.18 1.6a.5.5 0 0 1 0-.8l.5-.5a.52.52 0 0 1 .4-.2c.2 0 .3 0 .4.2l3.6 3.6L8.68.2a.5.5 0 0 1 .8 0l.5.5a.5.5 0 0 1 0 .8L5.48 6a.52.52 0 0 1-.4.2c-.18 0-.28 0-.38-.1z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </button>
+            <div class="language-dropdown-options">
+              <ul>
+                <li>
+                  <div>English</div>
+                </li>
+                <li>
+                  <div>Deutsch</div>
+                </li>
+                <li>
+                  <div>Espanol</div>
+                </li>
+                <li>
+                  <div>Francais</div>
+                </li>
+                <li>
+                  <div>Italian</div>
+                </li>
+                <li>
+                  <div>Germany</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <div id="footer-row1">
+          <button id="cancel-btn">Cancel</button>
+          <button id="save-btn">Save</button>
+        </div>
+        <div id="footer-row2">
+          <a href="">Download logs</a> <br />
+          <a href="">Logout</a>
+        </div>
+      </div>
+    </section>
+    <script src="/js/settings.js"></script>
+    <script src="/js/page-effect.js"></script>
+    <script src="/js/nav-left.js"></script>
+  </body>
+</html>

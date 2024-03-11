@@ -1,0 +1,456 @@
+*{
+  box-sizing: border-box;
+  font-family: "AmazonEmber, Helvetica, sans-serif";
+}
+
+body{
+  width: 100%;
+}
+
+nav{
+  display: flex;
+  height: 38px;
+  background-color: rgb(74,74,74);
+  justify-content: space-between;
+  width: 100%;
+}
+
+ nav p{
+  color: white;
+}
+nav svg, nav svg{
+  fill: white;
+}
+
+.container-fluid {
+  margin-left: 15px; /* Adjust as needed */
+  margin-right: 15px; /* Adjust as needed */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+/* --------------------------------------NAV LEFT--------------------------------------- */
+#nav-left{
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 15px;
+  width: 30%;
+  position: relative;
+  cursor: pointer;
+}
+
+#nav-left p{
+  margin-left: 10px;
+}
+
+#nav-left div:first-child{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#nav-left div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------------DROPDOWN STATUS */
+
+#dropdown-status{
+  position: absolute;
+  width: 30%;
+  display: none;
+}
+
+#dropdown-status ul{
+  width: 100%;
+  height: 298px;
+  overflow-y: scroll;
+
+}
+
+#dropdown-status ul li{
+  list-style: none;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 14px 18px 14px 18px;
+  background-color: white;
+  cursor: pointer;
+}
+
+#dropdown-status ul li:hover{
+  cursor: pointer;
+  background-color: rgb(71, 89, 110);
+  color: white;
+}
+
+
+
+/* --------------------------------------NAV RIGHT---------------------------------------- */
+#nav-right{
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+nav button{
+  background: none;
+  border: none;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+nav button div{
+  padding: 3px 7px 3px 7px;
+}
+
+
+/* --------------------------------------main---------------------------------------------- */
+
+main{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(242,242,242);
+}
+
+main svg{
+  margin-right: 12px;
+}
+
+.connects, .create-task{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 260px;
+  width: 228px;
+  height: 34px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  background-color: white;
+  margin-bottom: 12px;
+}
+
+.pad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 260px;
+  width: 228px;
+  height: 34px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+#main-icon{
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+#main-container{
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* --------------------------------Task and Chat -------------------------*/
+
+.task-count{
+  text-align: center;
+  height: 34px;
+}
+
+/* --------------------------------Setting--------------------------------- */
+
+
+#settings{
+  padding: 0px 14px 0px 14px;
+  width: 100%;
+}
+
+#settings #title{
+  padding: 14px 0px 14px 0px;
+}
+
+#settings h1{
+  font-weight: 400px;
+  line-height: 23.4px;
+  letter-spacing: 0.3px;
+  font-size: 1.125rem;
+}
+
+#settings legend{
+  padding: 5px 0px 14px 0px;
+}
+
+#settings label{
+  padding-bottom: 8px;
+}
+
+.wrapper-option{
+  display: flex;
+}
+
+#settings-main{
+  font-size: 1rem;
+  font-weight: 400px;
+  letter-spacing: 0.3px;
+  width: 1149px;
+  height: 763px;
+}
+
+/* --------------------------------------Settings Phone Choose section- */
+
+#dropdown-btn{
+  cursor: pointer;
+  border-width: 0px;
+}
+
+#dropdown-btn div{
+  display: flex;
+  align-items: center;
+  justify-self: center;
+}
+
+
+#dropdown-btn div img{
+  width: 20px;
+  height: 13px;
+}
+
+#dropdown-btn div div svg{
+  margin: 7px 5px 5px 5px;
+}
+
+#phone-input div input
+{
+  margin: 7px 5px 5px 5px;
+  border: none;
+  font-size: 14px;
+}
+
+
+
+#phone-form input[type="radio"]:checked {
+  background-color: rgb(23, 105, 221); /* Set background color to blue when checked */
+  border: none;
+}
+
+#phone-form input[type="text"]:valid{
+  border: none;
+  outline: none;
+}
+
+
+#phone-form{
+  padding-left: 30px;
+  width: 365px;
+  margin-bottom: 26px;
+}
+
+#phone-form > div:first-child{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  width: 365px;
+}
+
+#country-code{
+  width: 53px;
+  height: 53px;
+  margin-right: 12px;
+  position: relative;
+
+}
+
+#phone-input{
+  width: 300px;
+  height: 53px;
+
+}
+
+#phone-label{
+  height: 52px;
+  padding: 14px;
+}
+
+
+/* --------------------------------------Settings Phone dropdown options- */
+
+#dropdown-options{
+  position: absolute;
+  top: 105%;
+  display: none;
+  z-index: 1;
+}
+
+#dropdown-options ul{
+  width: 368px;
+  height: 228px;
+  overflow-y: scroll;
+}
+
+#dropdown-options li{
+  display: flex;
+  direction: none;
+  width: 353px;
+  height: 46px;
+  padding: 14px 18px 14px 18px;
+  align-items: center;
+  cursor: pointer;
+  background-color: white
+}
+
+#dropdown-options li:hover{
+  background-color: rgb(71, 89, 110);
+  color: white;
+}
+#dropdown-options li .country, .country-code{
+  padding-left: 12px;
+}
+
+/* --------------------------------------Settings Language dropdown options- */
+#language-dropdown-btn {
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 1rem;
+  height: 34px;
+  padding: 0px 14px 0px 14px;
+  cursor: pointer;
+  position: relative;
+}
+#language-dropdown-btn > div:first-child{
+  display: flex;
+  width: 368px;
+  height: 18px;
+  
+}
+#language{
+  width: 341px;
+  text-align: start;
+}
+
+#language-dropdown-icon{
+  width: fit-content;
+}
+
+.language-dropdown-options ul{
+  width: 398px;
+  height: 298px;
+  overflow-y: scroll;
+
+}
+.language-dropdown-options li{
+  list-style: none;
+  width: 383px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 14px 18px 14px 18px;
+  background-color: white;
+  cursor: pointer;
+
+}
+.language-dropdown-options ul li:hover{
+  background-color: rgb(71, 89, 110);
+  color: white;
+}
+
+.language-dropdown-options{
+  position: absolute;
+  display: none;
+
+}
+
+/* --------------------------------------Settings Footer */
+
+/* -----------------------------------ROW1 */
+
+#footer{
+  width: 100%;
+}
+
+#footer-row1{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 14px 10px 14px;
+  border-bottom: 1px solid black;
+  height: 50px;
+}
+
+#cancel-btn{
+  border: 1px solid black;
+  padding: 0px 15px 0px 15px;
+  margin-right: 6px;
+  width: 71px;
+  height: 28px;
+}
+
+#save-btn{
+  background-color: rgb(7, 115, 152);
+  color: white;
+  border: none;
+  padding: 0px 15px 0px 15px;
+  width: 71px;
+  height: 28px;
+}
+
+/* -----------------------------------ROW2*/
+#footer-row2{
+  width: 1149px;
+  padding: 10px 14px 10px 14px;
+  height: 67px;
+}
+
+#footer-row2 > a:first-child{
+  padding-bottom: 0.625rem;
+  height: 28px;
+
+}
+
+#footer-row2 a{
+  text-decoration: none;
+  color: rgb(17, 102, 187);
+}
+
+
+/* -----------------------------------------Register Page ------------------------*/
+
+#registration label{
+  margin-bottom: 5px;
+}
+
+#registration #container{
+  margin: 96px 96px 0px 96px;
+  display: flex;
+  justify-content: center;
+}
+
+#registration #form{
+  width: 50%;
+  padding: 19px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+#registration #form table tr{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+  height: 36px;
+}
+
+

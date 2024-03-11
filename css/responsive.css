@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px){
+    #nav-left, #dropdown-status{
+        width: 50%;
+    }
+    #nav-left > div:first-child{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #phone-form > div:first-child{
+        width: 300px;
+    }
+    #language-dropdown-btn > div:first-child{
+        width: 300px;
+    }
+}
