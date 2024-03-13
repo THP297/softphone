@@ -1,0 +1,109 @@
+/* --------------------------------------Settings Phone Choose section- */
+
+#dropdown-btn{
+    cursor: pointer;
+    border-width: 0px;
+  }
+  
+  #dropdown-btn div{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+  
+  
+  #dropdown-btn div img{
+    width: 20px;
+    height: 13px;
+  }
+  
+  #dropdown-btn div div svg{
+    margin: 7px 5px 5px 5px;
+  }
+  
+  #phone-input div input
+  {
+    margin: 7px 5px 5px 5px;
+    border: none;
+    font-size: 14px;
+  }
+  
+  
+  
+  #phone-form input[type="radio"]:checked {
+    background-color: rgb(23, 105, 221); /* Set background color to blue when checked */
+    border: none;
+  }
+  
+  #phone-form input[type="text"]:valid{
+    border: none;
+    outline: none;
+  }
+  
+  
+  #phone-form{
+    padding-left: 30px;
+    width: 365px;
+    margin-bottom: 26px;
+  }
+  
+  #phone-form > div:first-child{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    width: 365px;
+  }
+  
+  #country-code{
+    width: 53px;
+    height: 53px;
+    margin-right: 12px;
+    position: relative;
+  
+  }
+  
+  #phone-input{
+    width: 300px;
+    height: 53px;
+  
+  }
+  
+  #phone-label{
+    height: 52px;
+    padding: 14px;
+  }
+  
+  
+  /* --------------------------------------Settings Phone dropdown options- */
+  
+  #dropdown-options{
+    position: absolute;
+    top: 105%;
+    display: none;
+    z-index: 1;
+  }
+  
+  #dropdown-options ul{
+    width: 368px;
+    height: 228px;
+    overflow-y: scroll;
+  }
+  
+  #dropdown-options li{
+    display: flex;
+    direction: none;
+    width: 353px;
+    height: 46px;
+    padding: 14px 18px 14px 18px;
+    align-items: center;
+    cursor: pointer;
+    background-color: white
+  }
+  
+  #dropdown-options li:hover{
+    background-color: rgb(71, 89, 110);
+    color: white;
+  }
+  #dropdown-options li .country, .country-code{
+    padding-left: 12px;
+  }

@@ -1,0 +1,73 @@
+#call-ctrl-btn{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+#call-ctrl-btn button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    font-weight: 600px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+#call-ctrl-btn > button:first-child{
+    background-color: rgb(57, 96, 224);
+
+}
+
+#call-ctrl-btn > button:last-child{
+    background-color: green;
+    display: none;
+}
+
+#call-ctrl-btn #mute-btn{
+    background-color: rgb(216, 152, 33);
+    display: none;
+
+}
+
+#call-ctrl-btn #hold-btn{
+    background-color: rgb(216, 33, 192);
+    display: none;
+
+}
+
+#call-panel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(57, 96, 224);
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    display: none;
+}
+
+#call-panel > div:first-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+
+#call-panel > div:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    height: 30px;
+}

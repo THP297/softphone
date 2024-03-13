@@ -1,3 +1,5 @@
+import { Softphone } from "./softphone/softphone.js";
+
 /*
  * SIP credentials
  */
@@ -15,7 +17,7 @@ try {
 var Url_3CX = "https://bank-1-callcenter-concentrix.dxws.io:5001";
 var integrationMode = queryCredential.get("integrationMode");
 
-var PhoneEvent = {
+export var PhoneEvent = {
   RegisterByPublicPrivate(
     withPrivateIdentity,
     withPassword,
@@ -32,10 +34,10 @@ var PhoneEvent = {
     initiateSIPRegister();
   },
   MakeCall(PhoneNumber) {
-    if (!isExternalPhoneValid(PhoneNumber).isValid || PhoneNumber.length < 10) {
-      alert("SDT không hợp lệ");
-      return;
-    }
+    // if (!isExternalPhoneValid(PhoneNumber).isValid || PhoneNumber.length < 10) {
+    //   alert("SDT không hợp lệ");
+    //   return;
+    // }
     sipCall("call-audio", PhoneNumber);
   },
   Dialing(OrtherPartyNumber) {
@@ -74,6 +76,9 @@ var PhoneEvent = {
   },
   RegisteredSuccess() {
     postToParent("RegisteredSuccess", null);
+    const message = "Register success !";
+    const formLabel = document.querySelector("#form label");
+    formLabel.innerHTML = message;
   },
 };
 function postToParent(event, message) {
@@ -206,7 +211,7 @@ function initiateSIPRegister() {
       sip_headers: _sip_headers,
     });
     if (oSipStack.start() != 0) {
-      HideAll();
+      // HideAll();
     } else return;
   } catch (e) {
     alert("Lỗi:" + e);
@@ -237,8 +242,8 @@ function onSipEventStack(e /*SIPml.Stack.Event*/) {
         oSipSessionRegister.register();
         PhoneEvent.RegisteredSuccess();
       } catch (e) {
-        alert("Lỗi register event stack:" + e);
-        HideAll();
+        // alert("Lỗi register event stack:" + e);
+        // HideAll();
       }
       break;
     }
@@ -297,7 +302,6 @@ function onSipEventSession(e /* SIPml.Session.Event */) {
     case "connected": {
       var bConnected = e.type == "connected";
       if (e.session == oSipSessionRegister) {
-        ShowAvailablePhone();
       } else if (e.session == oSipSessionCall) {
         if (window.btnBFCP) window.btnBFCP.disabled = false;
 
@@ -532,7 +536,7 @@ function sipCall(s_type, phoneNum) {
           )
         ) {
           sipUnRegister();
-          HideAll();
+          // HideAll();
           window.location = "https://ns313841.ovh.net/call.htm";
         }
         return;
@@ -561,7 +565,7 @@ function sipCall(s_type, phoneNum) {
     oSipSessionCall.accept(oConfigCall);
   }
 }
-function sipHangUp() {
+export function sipHangUp() {
   if (oSipSessionCall) {
     oSipSessionCall.hangup({
       events_listener: { events: "*", listener: onSipEventSession },
@@ -603,50 +607,57 @@ var isInbound = false;
 // Event
 
 function tryingDial(phoneNum) {
-  HideAll();
-  ShowTalkingPhone();
-  StartTalkingWatch();
+  // HideAll();
+  // ShowTalkingPhone();
+  // StartTalkingWatch();
   var originNumber = phoneNum;
 
   if (phoneNum.includes("+")) {
     originNumber = phoneNum.split("+")[0];
   }
-  SetTalkingPhoneInfo("Call is in progress...", originNumber);
+  // SetTalkingPhoneInfo("Call is in progress...", originNumber);
   if (integrationMode == "external") {
     PhoneEvent.Dialing(oSipSessionCall.getRemoteFriendlyName());
   } else {
-    WebRTC.Event.Dialing(oSipSessionCall.getRemoteFriendlyName());
+    // WebRTC.Event.Dialing(oSipSessionCall.getRemoteFriendlyName());
   }
 }
 function progressDial() {}
 function beginConnected() {
-  StartTalkingWatch();
+  console.log("in call");
+  const softPhone = new Softphone();
+  softPhone.inCall();
   stopRingbackTone();
   stopRingTone();
-  HideAll();
-  ShowTalkingPhone();
-  SetTalkingPhoneInfo(
-    "Đã kết nối",
-    oSipSessionCall.getRemoteFriendlyName() || "unknown"
-  );
-  StartTalkingWatch();
+
+  // StartTalkingWatch();
+  // HideAll();
+  // ShowTalkingPhone();
+  // SetTalkingPhoneInfo(
+  //   "Đã kết nối",
+  //   oSipSessionCall.getRemoteFriendlyName() || "unknown"
+  // );
+  // StartTalkingWatch();
 }
 
 function endcall() {
   if (integrationMode == "external") {
     PhoneEvent.Ended(oSipSessionCall.getRemoteFriendlyName());
   } else {
-    WebRTC.Event.Ended(oSipSessionCall.getRemoteFriendlyName());
+    const softPhone = new Softphone();
+    softPhone.clientEndCall();
+    console.log("end2");
+    // WebRTC.Event.Ended(oSipSessionCall.getRemoteFriendlyName());
   }
 
   oSipSessionCall = null;
-  ChangeIsHold(false);
+  // ChangeIsHold(false);
   stopRingbackTone();
   stopRingTone();
-  HideAll();
-  ShowAvailablePhone();
-  StopTalkingWatch();
-  SetContactName("Unknown");
+  // HideAll();
+  // ShowAvailablePhone();
+  // StopTalkingWatch();
+  // SetContactName("Unknown");
   if (isInbound) {
     sipCall("call-audio", "callmarkdone");
     isInbound = false;
@@ -680,7 +691,7 @@ function dialConnected() {
   if (integrationMode == "external") {
     PhoneEvent.ConnectedByDialing(oSipSessionCall.getRemoteFriendlyName());
   } else {
-    WebRTC.Event.ConnectedByDialing(oSipSessionCall.getRemoteFriendlyName());
+    // WebRTC.Event.ConnectedByDialing(oSipSessionCall.getRemoteFriendlyName());
   }
 }
 

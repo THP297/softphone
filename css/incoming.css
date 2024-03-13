@@ -1,0 +1,44 @@
+#incoming-nav{
+    height: 60px;
+    background-color: green;
+}
+
+#incoming-nav > p:first-child{
+    height: 30px;
+    color: white;
+    padding: 5px 0px 0px 5px;
+}
+
+#incoming-nav > p:last-child{
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    padding-right: 10px;
+}
+
+
+
+#incoming-btn{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#incoming-btn button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-weight: 600px;
+    font-size: 16px;
+}
+
+#incoming-btn > button:first-child{
+    background-color: green;
+}
+
+#incoming-btn > button:last-child{
+    background-color: red;
+}

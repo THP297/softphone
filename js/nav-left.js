@@ -1,17 +1,25 @@
-// -------------------------------------------Settings Status dropdown
+export class NavLeft {
+  constructor() {
+    this.navLeft = document.querySelector("#nav-left");
+    this.dropDownStatus = document.querySelector("#dropdown-status");
+    this.currentStatus = document.querySelector("#status");
+    this.dropDownStatusContent = document.querySelectorAll(
+      "#dropdown-status ul li"
+    );
 
-var navLeft = document.querySelector("#nav-left");
-var dropDownStatus = document.querySelector("#dropdown-status");
-var currentStatus = document.querySelector("#status");
+    this.setupEventListeners();
+  }
 
-var dropDownStatusContent = document.querySelectorAll("#dropdown-status ul li");
-navLeft.addEventListener("click", function () {
-  dropDownStatus.style.display = "block";
-  dropDownStatusContent.forEach((option) => {
-    option.addEventListener("click", function () {
-      const newStatus = this.querySelector("div");
-      currentStatus.textContent = newStatus.textContent;
-      dropDownStatus.style.display = "none";
+  setupEventListeners() {
+    this.navLeft.addEventListener("click", () => {
+      this.dropDownStatus.style.display = "block";
+      this.dropDownStatusContent.forEach((option) => {
+        option.addEventListener("click", () => {
+          const newStatus = option.querySelector("div");
+          this.currentStatus.textContent = newStatus.textContent;
+          this.dropDownStatus.style.display = "none";
+        });
+      });
     });
-  });
-});
+  }
+}
